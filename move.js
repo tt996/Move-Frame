@@ -1,5 +1,5 @@
 
-// MOVE运动框架1.4
+// MOVE运动框架1.5
 // 以像素为结果的缓冲运动
 // 缓冲运动,兼容px单位
 			// 如margin:10px;属性名(name):属性值(value)
@@ -12,8 +12,10 @@
 					// let nowStyle=parseInt(getComputedStyle(obj)[name])
 					if (name=='opacity') {
 						nowStyle=getComputedStyle(obj)[name]*100
-					} else{
+					} else if(name=='width'||name=='height'||name=='height'||name=='font-size'||name=='border-width'||name=='border-radius'){
 						nowStyle=parseInt(getComputedStyle(obj)[name])
+					}else{
+						nowStyle=getComputedStyle(obj)[name]
 					}
 					// 像素取整去掉
 					
@@ -43,10 +45,11 @@
 						
 						if (name=='opacity') {
 							obj.style[name]=(nowStyle+speed)/100
-						} else{
+						} else if(name=='width'||name=='height'||name=='height'||name=='font-size'||name=='border-width'||name=='border-radius'){
 							obj.style[name]=nowStyle+speed+'px'
+						}else{
+							obj.style[name]=target
 						}
-						
 					}
 				},30)
 			}
