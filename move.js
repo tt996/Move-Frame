@@ -1,6 +1,6 @@
-// 初始化moveJS
-// 兼容px单位
-// MOVE运动框架1.0：以像素为结果的缓冲运动
+
+// MOVE运动框架1.1：
+// 以像素为结果的缓冲运动
 	// 缓冲运动,兼容px单位
 			// 如margin:10px;属性名(name):属性值(value)
 			// getComputedStyle()只读
